@@ -1,0 +1,22 @@
+# === Python ===
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+
+# === WhatsApp Web.js session/cache ===
+.wwebjs_auth/
+.wwebjs_cache/
+
+# === Environment ===
+.env
+.env.local
+
+# === Misc ===
+logs/
+.DS_Store
+Thumbs.db
