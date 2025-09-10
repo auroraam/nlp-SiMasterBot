@@ -17,6 +17,5 @@ npm-debug.log*
 .env.local
 
 # === Misc ===
-logs/
 .DS_Store
 Thumbs.db
