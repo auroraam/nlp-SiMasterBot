@@ -14,66 +14,74 @@ logging.basicConfig(
     encoding="utf-8"  # biar emoji/karakter non-ASCII aman
 )
 
+def detect_pronoun(text: str) -> str:
+    text = text.lower()
+    if re.search(r"\b(sa+ya+|aku+|gua+|gue+|ak|i|ane)\b", text):
+        return "kamu"
+    if re.search(r"\b(ka+mi+|ki+ta+)\b", text):
+        return "kalian"
+    return "kamu"
+
 RULES = [
     (re.compile(r"\b(login|log\s*in|masuk|sign\s*in)\b", re.I),
-     "Untuk login SIMASTER UGM gunakan akun SSO UGM (email mahasiswa/dosen + password)."),
+     "Untuk login SIMASTER UGM, {you} bisa gunakan akun SSO UGM (email mahasiswa/dosen + password)."),
     
     (re.compile(r"\b(error|tidak\s+bisa\s+akses|gagal\s+login|aplikasi\s+tidak\s+jalan|trouble|masalah)\b", re.I),
-     "Coba clear cache, ganti device, logout-login ulang, atau update ke versi terbaru. Jika masih error, hubungi helpdesk UGM."),
+     "Kalau {you} mengalami error, coba clear cache, ganti device, logout-login ulang, atau update ke versi terbaru. Jika masih error, hubungi helpdesk UGM."),
 
     (re.compile(r"\b(update|versi\s+baru|upgrade\s+aplikasi)\b", re.I),
-     "Versi terbaru SIMASTER tersedia di Google Play Store & App Store."),
-
-    (re.compile(r"\b(akses|buka|open|download|install|unduh|apk|aplikasi|app)\b", re.I),
-     "SIMASTER dapat diakses via website https://simaster.ugm.ac.id atau aplikasi mobile (Google Play Store / App Store)."),
+     "Versi terbaru SIMASTER bisa {you} unduh di Google Play Store & App Store."),
 
     (re.compile(r"\b(lupa+\s+(?:passwo+r+d+|kata\s*sa+nd+i+)|reset\s+(?:password|kata\s*sandi))\b", re.I),
-     "Jika lupa password, tekan tombol 'Lupa Kata Sandi' di login page SIMASTER, lalu cek email mahasiswa."),
+     "Jika {you} lupa password, tekan tombol 'Lupa Kata Sandi' di login page SIMASTER, lalu cek email mahasiswa."),
 
     (re.compile(r"\b(presensi|absen|absensi|hadir|qr\s*code|scan\s*qr|qr)\b", re.I),
-     "Untuk presensi, pilih menu Perkuliahan → Presensi → scan QR code di kelas. Aktifkan GPS. Jika gagal, gunakan menu Klaim Presensi."),
+     "Untuk presensi, {you} bisa pilih menu Perkuliahan → Presensi → scan QR code di kelas. Aktifkan GPS. Jika gagal, gunakan menu Klaim Presensi."),
 
     (re.compile(r"\b(persentase\s+kehadiran|rekap\s+hadir|jumlah\s+hadir|prosentase\s+absen)\b", re.I),
-     "Persentase kehadiran mahasiswa dapat diakses melalui menu Perkuliahan → Kehadiran Mahasiswa."),
+     "Persentase kehadiran {you} dapat diakses melalui menu Perkuliahan → Kehadiran Mahasiswa."),
 
     (re.compile(r"\b(jadwal\s+(?:kuliah|kelas)|ruang\s+kuliah|jam\s+kuliah|jadwal\s+hari\s+ini)\b", re.I),
-     "Jadwal dan ruang kuliah dapat dilihat di menu Akademik → Jadwal Kuliah, juga tampil di beranda aplikasi."),
+     "Jadwal dan ruang kuliah dapat {you} lihat di menu Akademik → Jadwal Kuliah, juga tampil di beranda aplikasi."),
 
     (re.compile(r"\b(jadwal\s+(?:ujian|uts|uas|tes)|uji\s*coba)\b", re.I),
-     "Jadwal ujian tersedia di menu Akademik → Jadwal Ujian."),
+     "Jadwal ujian bisa {you} akses di menu Akademik → Jadwal Ujian."),
 
     (re.compile(r"\b(nilai|transkrip|khs|ipk|hasil\s*studi|daftar\s*nilai)\b", re.I),
-     "Nilai dapat diakses di Akademik → Hasil Studi/Transkrip. KHS/transkrip sementara bisa diunduh langsung di SIMASTER."),
+     "Nilai dapat {you} akses di Akademik → Hasil Studi/Transkrip. KHS/transkrip sementara bisa diunduh langsung di SIMASTER."),
 
     (re.compile(r"\b(krs|isi\s+krs|pengisian\s+krs|ambil\s+mata\s*kuliah|perwalian)\b", re.I),
-     "Pengisian KRS dilakukan di menu Akademik → KRS sesuai jadwal. Pastikan sudah perwalian dengan dosen pembimbing."),
+     "Pengisian KRS bisa {you} lakukan di menu Akademik → KRS sesuai jadwal. Pastikan sudah perwalian dengan dosen pembimbing."),
 
     (re.compile(r"\b(ektm|ktm|kartu\s+tanda\s+mahasiswa)\b", re.I),
-     "eKTM bisa diakses di menu Akademik → eKTM. Unduh via portal web, klik kanan gambar → Save image as..."),
+     "eKTM bisa {you} akses di menu Akademik → eKTM. Unduh via portal web, klik kanan gambar → Save image as..."),
 
     (re.compile(r"\b(akademik|menu\s+akademik)\b", re.I),
-     "Menu Akademik mencakup: jadwal kuliah, nilai, KRS, eKTM, dll."),
+     "Menu Akademik mencakup: jadwal kuliah, nilai, KRS, eKTM, dll yang bisa {you} akses."),
 
     (re.compile(r"\b(fitur|menu|layanan|apa\s+saja|apa\s+yang\s+ada)\b", re.I),
-     "SIMASTER menyediakan layanan: akademik, jadwal, nilai, presensi, penelitian, pengabdian, hingga info fasilitas kampus."),
+     "SIMASTER menyediakan layanan: akademik, jadwal, nilai, presensi, penelitian, pengabdian, hingga info fasilitas kampus yang dapat {you} akses."),
 
     (re.compile(r"\b(bantuan|helpdesk|kontak|hubungi|call\s*center|cs|support)\b", re.I),
-     "Untuk bantuan hubungi helpdesk UGM: email helpdesk@ugm.ac.id atau telp (0274) 6491919."),
+     "Untuk bantuan, {you} dapat hubungi helpdesk UGM: email helpdesk@ugm.ac.id atau telp (0274) 6491919."),
 
     (re.compile(r"\b(web\s+simaster|link\s+simaster|website\s+simaster)\b", re.I),
-     "Portal resmi SIMASTER: https://simaster.ugm.ac.id"),
+     "Portal resmi SIMASTER bisa {you} buka di https://simaster.ugm.ac.id"),
 
     (re.compile(r"\b(download\s+aplikasi|apk|unduh\s+simaster|install\s+simaster)\b", re.I),
-     "Aplikasi resmi SIMASTER tersedia di Google Play Store dan Apple App Store."),
+     "Aplikasi resmi SIMASTER bisa {you} unduh di Google Play Store dan Apple App Store."),
 
-    (re.compile(r"\b(evaluasi\s+dosen|penilaian\s+dosen|survey\s+dosen)\b", re.I),
-     "Evaluasi dosen dapat dilakukan melalui menu Perkuliahan → Evaluasi Dosen."),
+    (re.compile(r"\b(evaluasi\s+dosen|edom|penilaian\s+dosen|survey\s+dosen)\b", re.I),
+     "Evaluasi dosen dapat {you} isi melalui menu Perkuliahan → Evaluasi Dosen."),
 
     (re.compile(r"\b(perpus|perpustakaan|koleksi|buku|peminjaman|pinjam|booking\s+tempat|reservasi\s+kursi)\b", re.I),
-     "Perpustakaan SIMASTER: cari koleksi, lihat detail lokasi buku, pesan kursi, pinjam buku, dll melalui menu Perpustakaan."),
+     "Perpustakaan SIMASTER: {you} bisacari koleksi, lihat detail lokasi buku, pesan kursi, pinjam buku, dll melalui menu Perpustakaan."),
 
     (re.compile(r"\b(belum\s+punya\s+akun|buat\s+akun|registrasi|daftar\s+akun)\b", re.I),
      "Buat akun di https://simaster.ugm.ac.id → klik 'Registrasi Akun'."),
+
+    (re.compile(r"\b(akses|buka|open|download|install|unduh|apk|aplikasi|app)\b", re.I),
+     "SIMASTER dapat {you} akses via website https://simaster.ugm.ac.id atau aplikasi mobile (Google Play Store / App Store)."),
 
     (re.compile(r"\b(halo+|hai+|hello+|hi+|hei|hola|hallo)\b", re.I),
      "Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊"),
@@ -84,10 +92,12 @@ RULES = [
 
 
 def reply(text: str) -> str:
+    pronoun = detect_pronoun(text)
     for pattern, ans in RULES:
         if pattern.search(text):
-            logging.info(f"Input: {text} → Reply: {ans}")
-            return ans
+            final_ans = ans.format(you=pronoun)
+            logging.info(f"Input: {text} → Reply: {final_ans}")
+            return final_ans
     fallback = "Maaf, pertanyaanmu belum ada di FAQ. Cek portal Simaster atau hubungi admin."
     logging.info(f"Input: {text} → Reply: {fallback}")
     return fallback

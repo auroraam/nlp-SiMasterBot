@@ -24,3 +24,8 @@
 2025-09-10 17:42:08,899 [INFO] Input: halo → Reply: Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊
 2025-09-10 17:42:39,775 [INFO] Input: halo → Reply: Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊
 2025-09-10 17:44:15,940 [INFO] Input: password → Reply: Maaf, pertanyaanmu belum ada di FAQ. Cek portal Simaster atau hubungi admin.
+2025-09-10 23:11:31,730 [INFO] Input: aku mau login, gmn caranya deh → Reply: Untuk login SIMASTER UGM, {you} bisa gunakan akun SSO UGM (email mahasiswa/dosen + password).
+2025-09-10 23:12:27,184 [INFO] Input: aku mau login, gmn caranya deh → Reply: Untuk login SIMASTER UGM, {you} bisa gunakan akun SSO UGM (email mahasiswa/dosen + password).
+2025-09-10 23:13:03,419 [INFO] Input: aku mau login, gmn caranya deh → Reply: Untuk login SIMASTER UGM, kamu bisa gunakan akun SSO UGM (email mahasiswa/dosen + password).
+2025-09-10 23:19:50,953 [INFO] Input: kami pengen akses presensi → Reply: SIMASTER dapat kalian akses via website https://simaster.ugm.ac.id atau aplikasi mobile (Google Play Store / App Store).
+2025-09-10 23:20:54,439 [INFO] Input: kami pengen akses presensi → Reply: Untuk presensi, kalian bisa pilih menu Perkuliahan → Presensi → scan QR code di kelas. Aktifkan GPS. Jika gagal, gunakan menu Klaim Presensi.
