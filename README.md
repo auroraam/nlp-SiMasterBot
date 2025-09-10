@@ -101,6 +101,9 @@ Bot memiliki log yang digunakan untuk menyimpan histori prompt yang masuk. Beber
 2025-09-10 16:26:00,563 [INFO] Input: terimakasiii → Reply: Sama-sama! Semoga membantu ya. 👍
 ```
 
+### Demo
+Video demo dapat diakses melalui: https://drive.google.com/drive/folders/1lQylO1xM3Pprt8fCh0iaag3YEr3A0T4d?usp=sharing
+
 ---
 
 ## Selamat mencoba SiMasterBot, semoga membantu!
@@ -108,6 +111,7 @@ Bot memiliki log yang digunakan untuk menyimpan histori prompt yang masuk. Beber
 ### Pengembang: 
 #### Aurora Ma'isyah - 22/493640/TK/54088
 #### Nabila Puspita Dewi - 22/493935/TK/54142
+
 
 
 
