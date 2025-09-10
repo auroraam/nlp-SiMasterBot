@@ -106,8 +106,9 @@ Bot memiliki log yang digunakan untuk menyimpan histori prompt yang masuk. Beber
 ## Selamat mencoba SiMasterBot, semoga membantu!
 
 ### Pengembang: 
-Aurora Ma'isyah - 22/493640/TK/54088
-Nabila Puspita Dewi - 22/493935/TK/54142
+#### Aurora Ma'isyah - 22/493640/TK/54088
+#### Nabila Puspita Dewi - 22/493935/TK/54142
+
 
 
 
