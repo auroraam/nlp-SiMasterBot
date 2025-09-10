@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, subprocess, time
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from engine import reply
@@ -100,3 +100,38 @@ def test_registrasi():
 
 def test_fallback():
     assert "faq" in reply("qwertyuiop").lower()
+
+def test_case_insensitive():
+    assert "KRS" in reply("IsI KrS")
+    assert "Nilai" in reply("NILAI")
+
+def test_logging_creates_file():
+    reply("halo")
+    assert os.path.exists("logs/bot.log")
+
+def test_cli_runs():
+    result = subprocess.run(
+        ["python", "cli.py"],
+        input="password\n:q\n",   
+        text=True,
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace"
+    )
+    assert "halo" in result.stdout.lower() or "faq" in result.stdout.lower()
+
+def test_variants():
+    assert "password" in reply("lupaa kata sandiiiii").lower()
+    assert "presensi" in reply("scan qr code").lower()
+    assert "sama-sama" in reply("makasiiiii").lower()
+
+def test_performance():
+    start = time.time()
+    for _ in range(1000):
+        reply("lupa password")
+    end = time.time()
+    assert (end - start) < 1
+
+def test_empty_input():
+    out = reply("")
+    assert isinstance(out, str)

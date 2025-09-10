@@ -15,12 +15,6 @@ logging.basicConfig(
 )
 
 RULES = [
-    (re.compile(r"\b(halo+|hai+|hello+|hi+|hei|hola|hallo)\b", re.I),
-     "Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊"),
-
-    (re.compile(r"\b(terima\s?kasi+h*i*|makasi+h*i*|thanks+|thank\s*you+)\b", re.I),
-     "Sama-sama! Semoga membantu ya. 👍"),
-
     (re.compile(r"\b(login|log\s*in|masuk|sign\s*in)\b", re.I),
      "Untuk login SIMASTER UGM gunakan akun SSO UGM (email mahasiswa/dosen + password)."),
     
@@ -33,7 +27,7 @@ RULES = [
     (re.compile(r"\b(akses|buka|open|download|install|unduh|apk|aplikasi|app)\b", re.I),
      "SIMASTER dapat diakses via website https://simaster.ugm.ac.id atau aplikasi mobile (Google Play Store / App Store)."),
 
-    (re.compile(r"\b(lupa\s+(?:password|kata\s*sandi)|reset\s+(?:password|kata\s*sandi))\b", re.I),
+    (re.compile(r"\b(lupa+\s+(?:passwo+r+d+|kata\s*sa+nd+i+)|reset\s+(?:password|kata\s*sandi))\b", re.I),
      "Jika lupa password, tekan tombol 'Lupa Kata Sandi' di login page SIMASTER, lalu cek email mahasiswa."),
 
     (re.compile(r"\b(presensi|absen|absensi|hadir|qr\s*code|scan\s*qr|qr)\b", re.I),
@@ -80,6 +74,12 @@ RULES = [
 
     (re.compile(r"\b(belum\s+punya\s+akun|buat\s+akun|registrasi|daftar\s+akun)\b", re.I),
      "Buat akun di https://simaster.ugm.ac.id → klik 'Registrasi Akun'."),
+
+    (re.compile(r"\b(halo+|hai+|hello+|hi+|hei|hola|hallo)\b", re.I),
+     "Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊"),
+
+    (re.compile(r"\b(terima\s?kasi+h*i*|makasi+h*i*|thanks+|thank\s*you+)\b", re.I),
+     "Sama-sama! Semoga membantu ya. 👍"),
 ]
 
 
