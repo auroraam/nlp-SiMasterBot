@@ -29,3 +29,14 @@
 2025-09-10 23:13:03,419 [INFO] Input: aku mau login, gmn caranya deh → Reply: Untuk login SIMASTER UGM, kamu bisa gunakan akun SSO UGM (email mahasiswa/dosen + password).
 2025-09-10 23:19:50,953 [INFO] Input: kami pengen akses presensi → Reply: SIMASTER dapat kalian akses via website https://simaster.ugm.ac.id atau aplikasi mobile (Google Play Store / App Store).
 2025-09-10 23:20:54,439 [INFO] Input: kami pengen akses presensi → Reply: Untuk presensi, kalian bisa pilih menu Perkuliahan → Presensi → scan QR code di kelas. Aktifkan GPS. Jika gagal, gunakan menu Klaim Presensi.
+2025-09-10 23:23:08,711 [INFO] Input: halo → Reply: Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊
+2025-09-10 23:29:15,716 [INFO] Input: Halo → Reply: Halo! Ada yang bisa saya bantu terkait SIMASTER? 😊
+2025-09-10 23:29:30,470 [INFO] Input: Aku mau login ke simaster gimana ya caranya → Reply: Untuk login SIMASTER UGM, kamu bisa gunakan akun SSO UGM (email mahasiswa/dosen + password).
+2025-09-10 23:29:53,650 [INFO] Input: eh, kalo aku lupa password nya gimana? → Reply: Jika kamu lupa password, tekan tombol 'Lupa Kata Sandi' di login page SIMASTER, lalu cek email mahasiswa.
+2025-09-10 23:30:07,300 [INFO] Input: bisa reset password sekalian ga? → Reply: Jika kamu lupa password, tekan tombol 'Lupa Kata Sandi' di login page SIMASTER, lalu cek email mahasiswa.
+2025-09-10 23:30:36,846 [INFO] Input: aku mau lihat jadwal kuliah hari ini dimana ya → Reply: Jadwal dan ruang kuliah dapat kamu lihat di menu Akademik → Jadwal Kuliah, juga tampil di beranda aplikasi.
+2025-09-10 23:30:54,416 [INFO] Input: jadwal ujian bisa aku akses dimana yaa → Reply: Jadwal ujian bisa kamu akses di menu Akademik → Jadwal Ujian.
+2025-09-10 23:31:22,520 [INFO] Input: kalau mau isi evaluasi dosen harus kemana? → Reply: Evaluasi dosen dapat kamu isi melalui menu Perkuliahan → Evaluasi Dosen.
+2025-09-10 23:31:40,227 [INFO] Input: apa aku bisa booking tempat di perpustakaan lewat simaster? → Reply: Perpustakaan SIMASTER: kamu bisacari koleksi, lihat detail lokasi buku, pesan kursi, pinjam buku, dll melalui menu Perpustakaan.
+2025-09-10 23:31:57,980 [INFO] Input: aku perlu ktm, bisa lihat dimana ya? → Reply: eKTM bisa kamu akses di menu Akademik → eKTM. Unduh via portal web, klik kanan gambar → Save image as...
+2025-09-10 23:32:25,165 [INFO] Input: kalau hasil studi bisa aku lihat dimana ya? → Reply: Nilai dapat kamu akses di Akademik → Hasil Studi/Transkrip. KHS/transkrip sementara bisa diunduh langsung di SIMASTER.
